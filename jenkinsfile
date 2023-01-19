@@ -9,7 +9,7 @@ pipeline {
     }
     stage ('Publish ECR'){
       steps {
-{         sh 'docker login -u AWS -p $(aws ecr get-login-password --region eu-west-1) 365882178469.dkr.ecr.eu-west-1.amazonaws.com'
+          sh 'docker login -u AWS -p $(aws ecr get-login-password --region eu-west-1) 365882178469.dkr.ecr.eu-west-1.amazonaws.com'
           sh 'docker build -t secalliancepoc .'
           sh 'docker tag secalliancepoc:latest 365882178469.dkr.ecr.eu-west-1.amazonaws.com/secalliancepoc:latest'
           sh 'docker push 365882178469.dkr.ecr.eu-west-1.amazonaws.com/secalliancepoc:latest' 
