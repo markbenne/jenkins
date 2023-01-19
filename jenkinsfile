@@ -4,7 +4,7 @@ pipeline {
     stage ('build'){
       steps {
         sh 'printenv'
-        sh 'docker buid -t secalliancepoc .'
+        sh 'docker build -t secalliancepoc .'
       }	
     }
     stage ('Publish ECR'){
