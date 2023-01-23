@@ -4,6 +4,8 @@ pipeline {
     stage ('build'){
       steps {
         sh 'printenv'
+        withEnv(["redis_host=myredishost"]) {
+         echo env.redis_host   }
         sh 'docker build -t secalliancepoc .'
       }	
     }
